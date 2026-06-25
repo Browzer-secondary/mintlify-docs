@@ -1,0 +1,90 @@
+---
+title: "Add and Publish Docs to Your Browzer Help Center"
+sidebarTitle: "Publish Docs"
+description: "Organize workflow documentation into categories, select pages to publish, and push them live to your Browzer Docs Portal with a single click."
+---
+
+Once your Browzer Docs Portal exists, you can start populating it with workflow documentation. The publishing flow lets you group related pages into named categories, pick which individual pages to include, and push everything live in one action. Published pages are immediately visible to anyone who can access your portal URL — no additional review step is required.
+
+## Prerequisites
+
+- An existing Browzer Docs Portal. If you have not created one yet, see [Create a Browzer Docs Portal for Your Help Center](/docs-portal/create-docs-portal).
+- At least one recorded workflow with generated documentation. See [Edit Workflow Documentation](/workflows/edit-workflow-documentation) if you need to create or edit documentation first.
+
+## Organize and publish your docs
+
+<Steps>
+  <Step title="Open the Docs Portal">
+    In your Browzer dashboard, click **Docs Portal** in the main navigation to open the portal management view. Select the portal you want to publish to if you manage more than one.
+  </Step>
+
+  <Step title="Create a category">
+    Categories help visitors navigate your help center by grouping related pages together.
+
+    1. Click **Create new**.
+    2. Type a category name in the **New category name** field (e.g., "Account Management" or "Workflow Guides").
+    3. Click **Add**.
+
+    Repeat this step to create as many categories as you need before selecting pages.
+
+    <Tip>
+      Plan your category structure before publishing — it is easier to move pages into the right group from the start than to reorganize later.
+    </Tip>
+  </Step>
+
+  <Step title="Select pages to publish">
+    Use the dropdown selector to choose which workflow documentation pages to include in the portal:
+
+    - **Select all** — adds every available page to the publishing queue.
+    - **Deselect all** — clears the current selection.
+    - **Individual checkboxes** — choose specific pages one by one.
+
+    To assign pages to a category, select them and then choose the target category from the category picker. Unassigned pages will appear under a default section.
+
+    <Note>
+      You can return to this step at any time to add or remove pages. Changes only go live when you click **Publish**.
+    </Note>
+  </Step>
+
+  <Step title="Publish to the portal">
+    Click **Publish [N]** (where *N* is the number of selected pages). Browzer pushes the selected pages to your live portal immediately.
+
+    <Warning>
+      Publishing is immediate and visible to all portal visitors. Make sure documentation is reviewed and finalized before clicking Publish.
+    </Warning>
+  </Step>
+</Steps>
+
+## Verify pages are live
+
+After publishing, confirm the docs are accessible:
+
+1. In the portal settings, click the **Live Portal URL** or **Open** link.
+2. Hard-refresh the portal page in your browser — press **Cmd+Shift+R** on macOS or **Ctrl+Shift+R** on Windows/Linux — to bypass any cached version.
+3. Navigate to a published page and confirm the content loads correctly.
+
+<Tip>
+  If you do not see newly published pages immediately, wait 30–60 seconds and hard-refresh again. Browzer propagates changes quickly but browser caches can sometimes lag behind.
+</Tip>
+
+## Common issues
+
+<Accordion title="The Docs Portal section is not visible in my dashboard">
+  The Docs Portal feature may not be included in your current subscription tier. Check your plan under [Billing](/account/billing) or contact your workspace admin for access.
+</Accordion>
+
+<Accordion title="I created a category but pages are not appearing under it">
+  Make sure you selected the pages and assigned them to the category before clicking **Publish**. Pages that are selected but not assigned to a category will appear in a default uncategorized section.
+</Accordion>
+
+<Accordion title="The Publish button shows 0 pages or is grayed out">
+  No pages are currently selected. Use the dropdown selector to choose at least one page, then the **Publish** button will become active.
+</Accordion>
+
+<Accordion title="A published page is not showing up on the live portal">
+  Perform a hard-refresh (Cmd+Shift+R / Ctrl+Shift+R) on the portal. If the page still does not appear after a minute, return to the Docs Portal view, confirm the page is still selected, and click **Publish** again.
+</Accordion>
+
+<Accordion title="How do I remove a page from the portal?">
+  Deselect the checkbox for the page you want to remove, then click **Publish** again to update the live portal. Removed pages are no longer accessible via the portal URL.
+</Accordion>

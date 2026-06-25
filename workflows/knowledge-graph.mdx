@@ -1,0 +1,128 @@
+---
+title: "Add Workflows to the Browzer Knowledge Graph"
+sidebarTitle: "Knowledge Graph"
+description: "Index your workflows in the Browzer Knowledge Graph to enable AI-powered retrieval, search, and question-answering for your team's documented processes."
+---
+
+The Browzer Knowledge Graph is a structured index of your recorded workflows that makes them available to AI-powered tools. Instead of manually searching through documentation, your team — or an AI agent — can ask questions in plain language and receive step-by-step answers drawn directly from your SOPs. The Knowledge Graph is also the data layer that powers the [Browzer MCP server](/mcp/overview), enabling AI coding assistants and automation tools to query your documented processes as context. Adding a workflow to the graph takes under a minute, and you can organize workflows into named groups to keep the index clean as your library grows.
+
+## Why use the Knowledge Graph
+
+<CardGroup cols={2}>
+  <Card title="AI-powered Q&A" icon="message-circle-question">
+    Team members can ask natural-language questions — "How do I reset a client password?" — and receive answers grounded in your actual SOPs rather than generic suggestions.
+  </Card>
+  <Card title="Onboarding automation" icon="user-check">
+    New hires can self-serve process questions on day one. Point them at the Knowledge Graph instead of scheduling walk-throughs for every routine workflow.
+  </Card>
+  <Card title="MCP integration" icon="cpu">
+    The graph is the foundation of the Browzer MCP server. Any AI tool connected via MCP can retrieve your workflows as live context when generating code, drafting docs, or running automations.
+  </Card>
+  <Card title="Centralized process discovery" icon="search">
+    All your workflows are discoverable from one place, organized by group, and searchable — no more hunting across folders or asking colleagues where the right SOP lives.
+  </Card>
+</CardGroup>
+
+## Prerequisites
+
+Before adding a workflow to the Knowledge Graph, confirm that you have:
+
+- An active Browzer account
+- At least one recorded workflow in your **Workflow Documentation** section
+- Editor or Admin access on your workspace
+
+<Note>
+  Workflows must be fully recorded and saved before they can be indexed. A workflow that is still processing or in a draft state will not appear in the graph selection list.
+</Note>
+
+## Add a workflow to the Knowledge Graph
+
+<Steps>
+  <Step title="Open the Knowledge Graph">
+    Log in to Browzer and click **Knowledge Graph** in the left sidebar. The graph view loads showing any workflows already indexed, organized by group.
+  </Step>
+  <Step title="Start adding a workflow">
+    Click the **Add to graph** button in the top-right corner of the Knowledge Graph page. A panel slides open prompting you to navigate to the workflow you want to index.
+  </Step>
+  <Step title="Navigate to your workflow">
+    In the panel, click the navigation button (the arrow or **Browse** control) to open the workflow selector. This lists all recorded workflows available in your workspace.
+  </Step>
+  <Step title="Open the Groups view">
+    Inside the workflow selector, click **Groups** to switch to the grouped view. Groups let you classify workflows by team, process type, or any category that makes sense for your organization — for example, "Sales", "Support", or "Engineering Onboarding".
+  </Step>
+  <Step title="Select the workflow to index">
+    Find the workflow you want to add and click its description or title to select it. The selector highlights the chosen workflow and shows a preview of its first few steps so you can confirm it's the right one.
+
+    <Tip>
+      If the workflow you're looking for doesn't appear in any existing group, it may be unclassified. Scroll to the **Ungrouped** section at the bottom of the list or use the search bar at the top of the selector to find it by name.
+    </Tip>
+  </Step>
+  <Step title="Confirm and add to the graph">
+    With the workflow selected, click **Add** (or **Confirm**) to index it. Browzer processes the workflow and adds it to the Knowledge Graph under the group you navigated through. The graph view refreshes and the workflow appears in the appropriate group tile.
+  </Step>
+</Steps>
+
+## Organizing workflows into groups
+
+Groups are the primary way to keep a large Knowledge Graph navigable. When an AI tool queries the graph, it can filter by group to narrow retrieval to a relevant subset of workflows — for example, returning only "Support" SOPs when answering a customer-facing question.
+
+To assign a workflow to a group during indexing, select the workflow from within the target group in the selector panel (Step 4 above). If you need to move a workflow to a different group after indexing, remove it from the graph and re-add it through the correct group.
+
+<Info>
+  You can add the same workflow to multiple groups if it's relevant to more than one team or process category. Each entry in the graph is independent, so updating one doesn't affect the others.
+</Info>
+
+## Confirm a workflow was indexed successfully
+
+After adding a workflow, verify it's in the graph before relying on it for AI retrieval:
+
+1. Return to the main **Knowledge Graph** view.
+2. Locate the group you added the workflow to and expand it.
+3. Confirm the workflow title appears in the group list without an error badge or warning icon.
+4. Optionally, use the graph's search bar to query a keyword from the workflow's steps — a successful result confirms the content is indexed and retrievable.
+
+<Warning>
+  If the workflow appears in the graph but shows an error badge (a red exclamation icon), the indexing job encountered a problem. Remove the workflow and add it again. If the error persists, check that the original workflow is fully saved and not in a draft state.
+</Warning>
+
+## What happens after indexing
+
+Once a workflow is in the Knowledge Graph, it's immediately available for AI retrieval and search. If you later [edit the workflow's steps or descriptions](/workflows/edit-workflow-documentation), the graph picks up the updated content automatically on its next refresh cycle — you don't need to remove and re-add the workflow. If you delete a workflow from Browzer entirely, it's removed from the graph at the same time.
+
+## Troubleshooting
+
+<Accordion title="The Add to graph button is not responding">
+  If clicking **Add to graph** does nothing or the panel doesn't open:
+
+  1. Refresh the Knowledge Graph page and try again.
+  2. Make sure you have Editor or Admin access — Viewers cannot modify the graph.
+  3. Try a different browser or disable browser extensions that might be blocking panel animations.
+
+  If the button is visible but consistently unresponsive, contact Browzer support with your workspace name and the browser version you're using.
+</Accordion>
+
+<Accordion title="The workflow I want to add isn't showing up in the Groups selector">
+  Workflows only appear in the selector if they are fully recorded and saved. Check the following:
+
+  - Open **Workflow Documentation** in the sidebar and confirm the workflow has a **Saved** or **Published** status, not **Processing** or **Draft**.
+  - If the workflow was recorded very recently, wait a moment and refresh the selector — processing can take up to a minute for longer recordings.
+  - Use the search bar at the top of the selector to search by the exact workflow title.
+</Accordion>
+
+<Accordion title="I added the workflow but it's not appearing in the Knowledge Graph view">
+  After clicking **Add**, allow a few seconds for the graph view to refresh. If the workflow still doesn't appear:
+
+  1. Refresh the entire Knowledge Graph page.
+  2. Check all groups (including **Ungrouped**) in case the workflow was indexed under an unexpected classification.
+  3. Use the graph's search bar to search for the workflow title directly.
+
+  If none of the above reveal the workflow, try removing it (if an entry exists) and adding it again from scratch.
+</Accordion>
+
+<Accordion title="I see an error message when trying to add a workflow">
+  An error during indexing usually means one of the following:
+
+  - **Workflow not fully saved** — open the workflow in the editor, make a minor edit (such as adding a space and removing it), and save again to force a clean save state.
+  - **Permission issue** — verify your role is Editor or Admin under [Team Members](/account/team-members).
+  - **Temporary service issue** — wait a minute and retry. If errors persist across multiple workflows, check the Browzer status page or reach out to support.
+</Accordion>

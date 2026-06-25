@@ -1,0 +1,83 @@
+---
+title: "Share Browzer Documentation Internally or Externally"
+sidebarTitle: "Share Docs"
+description: "Control access to your Browzer documentation. Toggle sharing on to grant internal team members or external stakeholders access via a shareable link."
+---
+
+Browzer makes it easy to distribute individual documentation pages to collaborators — whether that is a teammate who needs a quick process reference or an external stakeholder reviewing a workflow. The share feature lets you flip a toggle to generate a shareable link, and you can revoke access just as quickly when it is no longer needed.
+
+## Find the Share button
+
+Open the documentation page you want to share from the Browzer dashboard. Look for the **Share** button in the top toolbar or action menu near the page content — it typically appears as a share icon, a link icon, or the text label "Share."
+
+## Share your documentation
+
+<Steps>
+  <Step title="Open the share dialog">
+    Click the **Share** button. A share dialog or panel opens, displaying all available access controls for the page.
+  </Step>
+
+  <Step title="Enable sharing">
+    Inside the dialog, click the toggle switch to turn sharing on. The toggle changes color (typically to a filled or highlighted state) when sharing is active.
+
+    <CardGroup cols={2}>
+      <Card title="Internal sharing" icon="users">
+        Grant access to team members who are part of your Browzer workspace. Use this for docs you want visible only to colleagues.
+      </Card>
+      <Card title="External sharing" icon="link">
+        Generate a link that anyone with the URL can open — no Browzer account required. Use this to share docs with clients, contractors, or external reviewers.
+      </Card>
+    </CardGroup>
+
+    Toggle on the access type that matches your intent. Both toggles can be active simultaneously if you need both internal and external sharing enabled.
+
+    <Warning>
+      Once sharing is enabled, the documentation is accessible to anyone who has the link — without additional approval steps. Only share links with people you trust to view that content.
+    </Warning>
+  </Step>
+
+  <Step title="Copy the shareable link">
+    After enabling a toggle, the shareable link appears in the dialog. Click the copy button or select and copy the URL manually.
+
+    Share the link via email, Slack, or any other channel your recipients use.
+  </Step>
+
+  <Step title="Confirm and close the dialog">
+    Click the confirm or close button to dismiss the share dialog. The sharing settings you enabled remain active until you return and revoke them.
+  </Step>
+</Steps>
+
+## Revoke access
+
+To remove access from a previously shared page:
+
+1. Open the documentation page.
+2. Click **Share** to reopen the dialog.
+3. Toggle off the internal or external sharing switch.
+4. Close the dialog. The previously issued link will no longer work.
+
+<Note>
+  Revoking sharing does not notify recipients. Anyone who already opened the link and bookmarked the page will see an access error the next time they try to load it.
+</Note>
+
+## Common issues
+
+<Accordion title="The Share button is not responding when I click it">
+  Make sure JavaScript is enabled in your browser. Try a hard-refresh (Cmd+Shift+R / Ctrl+Shift+R), or try an incognito window to rule out a browser extension conflict. If the issue persists, sign out and back in.
+</Accordion>
+
+<Accordion title="I see the Share button but there is no toggle visible inside the dialog">
+  Your account role may not have permission to change sharing settings. Ask your workspace admin to grant you the appropriate permissions, or ask them to enable sharing on your behalf. See [Team Members](/account/team-members) for role management.
+</Accordion>
+
+<Accordion title="No shareable link is generated after I enable the toggle">
+  Wait a few seconds and then scroll within the share dialog — the link sometimes appears just below the toggle. If it still does not appear, toggle sharing off, save, then toggle it back on again.
+</Accordion>
+
+<Accordion title="Recipients say they cannot access the link I sent">
+  Confirm that the sharing toggle is still enabled — it may have been turned off by another team member. Also check that you copied the complete URL (it should not be truncated). If you are using internal-only sharing, recipients must be signed in to a Browzer account in your workspace.
+</Accordion>
+
+<Accordion title="How do I revoke access for one person without removing access for everyone?">
+  Browzer currently uses link-based sharing rather than per-user permissions on individual pages. To revoke access for a specific person, toggle sharing off (which invalidates the current link for everyone) and then re-enable it — this generates a new link. Only share the new link with the people who should retain access.
+</Accordion>

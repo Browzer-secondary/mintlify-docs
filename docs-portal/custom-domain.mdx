@@ -1,0 +1,130 @@
+---
+title: "Add a Custom Domain to Your Browzer Docs Portal"
+sidebarTitle: "Custom Domain"
+description: "Point your own domain to your Browzer Docs Portal with a CNAME DNS record. Verify ownership and serve docs at your branded URL with automatic SSL."
+---
+
+By default, your Browzer Docs Portal is served from a Browzer-managed URL. Connecting a custom domain — such as `docs.yourcompany.com` — lets you serve documentation from your own branded address with automatic SSL, so visitors see a secure, professional URL instead of a Browzer subdomain.
+
+The setup involves four phases: entering your domain in Browzer, copying the DNS target Browzer provides, adding a CNAME record in your DNS provider, and verifying ownership back in Browzer.
+
+<Note>
+  These instructions show GoDaddy as the DNS provider example. The steps are nearly identical for any registrar (Cloudflare, Namecheap, Route 53, etc.) — the field names may differ slightly.
+</Note>
+
+## Phase 1 — Enter your custom domain in Browzer
+
+<Steps>
+  <Step title="Open your portal settings">
+    In your Browzer dashboard, navigate to **Docs Portal** and open the settings for the portal you want to connect a domain to.
+  </Step>
+
+  <Step title="Enter your domain">
+    Click the **Domain** field and type your custom domain — for example, `docs.yourcompany.com`. Use a subdomain (e.g., `docs.`, `help.`, `support.`) for the smoothest setup, since root domains require a special record type covered in the DNS note below.
+  </Step>
+
+  <Step title="Save the domain">
+    Click **Save**. Browzer records your domain and generates a unique DNS target value for your account.
+  </Step>
+</Steps>
+
+## Phase 2 — Copy the DNS target from Browzer
+
+After saving, Browzer displays a **DNS target** (a CNAME value unique to your portal). It looks similar to:
+
+```
+d335557c6dd6fa44.vercel-dns-016.com
+```
+
+Click the copy button next to this value to copy it to your clipboard. You will paste it into your DNS provider in the next phase.
+
+<Warning>
+  Do not close the Browzer portal settings tab during setup. You will need to return here to complete verification in Phase 4.
+</Warning>
+
+## Phase 3 — Add the CNAME record in your DNS provider
+
+<Steps>
+  <Step title="Log in to your DNS provider">
+    Open GoDaddy (or your DNS provider) in a new browser tab and navigate to the DNS management section for your domain.
+  </Step>
+
+  <Step title="Add a new record">
+    Click **Add New Record**. A form appears asking for the record type, name, and value.
+  </Step>
+
+  <Step title="Configure the CNAME record">
+    Fill in the fields as follows:
+
+    | Field | Value |
+    |---|---|
+    | **Type** | `CNAME` |
+    | **Name** | The subdomain portion only — e.g., `docs` (not `docs.yourcompany.com`) |
+    | **Value / Points to** | Paste the DNS target you copied from Browzer (e.g., `d335557c6dd6fa44.vercel-dns-016.com`) |
+    | **TTL** | Leave as default (or set to 600 seconds for faster propagation) |
+
+    <Note>
+      If you want to use a **root domain** (e.g., `yourcompany.com` without a subdomain), your DNS provider must support **ALIAS** or **ANAME** records. Use that record type instead of CNAME and point it to the same Browzer DNS target.
+    </Note>
+  </Step>
+
+  <Step title="Save the DNS record">
+    Click **Save** in your DNS provider. The record is queued for propagation across DNS servers globally.
+
+    <Tip>
+      DNS propagation can take up to 24 hours globally, but verification in Browzer typically works within 5–10 minutes if the record is entered correctly. You can proceed to Phase 4 right away.
+    </Tip>
+  </Step>
+</Steps>
+
+## Phase 4 — Verify domain ownership in Browzer
+
+<Steps>
+  <Step title="Return to Browzer portal settings">
+    Switch back to the Browzer tab where you entered your domain.
+  </Step>
+
+  <Step title="Start verification">
+    Click **Continue & Verify**. Browzer sends a one-time password (OTP) to the contact email associated with your GoDaddy account (or your DNS provider account, depending on how the verification is configured).
+  </Step>
+
+  <Step title="Enter the one-time password">
+    Check your email for the OTP, then type it into the **One-time Password** field in the verification dialog.
+  </Step>
+
+  <Step title="Complete verification">
+    Click **Verify**, then click **Verify Domain**. Browzer checks your DNS record and, if everything matches, marks your domain as verified.
+  </Step>
+</Steps>
+
+## Confirm it worked
+
+Your custom domain setup is complete when:
+
+- The domain status in Browzer changes from **Pending** to **Verified**.
+- Visiting your custom domain in a browser loads your Docs Portal.
+- The browser shows a valid SSL certificate with no security warnings (the padlock icon appears in the address bar).
+
+Allow a few minutes after verification for SSL provisioning to complete if the padlock does not appear immediately.
+
+## Common issues
+
+<Accordion title="Verification fails even though I added the CNAME record">
+  DNS propagation may not be complete yet. Wait 5–10 minutes and try clicking **Verify Domain** again. You can also use a DNS lookup tool (e.g., [dnschecker.org](https://dnschecker.org)) to confirm the CNAME record is visible globally before retrying. Double-check that the **Name** field in your DNS record contains only the subdomain (`docs`), not the full domain (`docs.yourcompany.com`).
+</Accordion>
+
+<Accordion title="GoDaddy shows an error when I try to save the DNS record">
+  Ensure the **Type** is set to `CNAME` and the **Value** field contains the full Browzer DNS target string (e.g., `d335557c6dd6fa44.vercel-dns-016.com`) with no trailing spaces or extra characters. If a conflicting A or CNAME record for the same subdomain already exists, delete it before adding the new one.
+</Accordion>
+
+<Accordion title="I did not receive the OTP email">
+  Check your spam or junk folder. The OTP email is sent to the account email on file with your DNS provider, not necessarily your Browzer login email. If it still has not arrived after a few minutes, return to the Browzer settings and click **Continue & Verify** again to request a new OTP.
+</Accordion>
+
+<Accordion title="My domain still shows as 'Unverified' after I clicked Verify Domain">
+  Confirm that the CNAME value in your DNS provider exactly matches the DNS target shown in Browzer — even a single missing or extra character will cause verification to fail. After correcting the record, wait a few minutes for the change to propagate, then click **Verify Domain** again.
+</Accordion>
+
+<Accordion title="I am worried about pasting the DNS target — is it safe?">
+  Yes. The DNS target (e.g., `d335557c6dd6fa44.vercel-dns-016.com`) is a public value that tells DNS servers where to route traffic for your subdomain. It does not expose any private credentials. Browzer generates a unique target per account, so this value only routes to your portal.
+</Accordion>

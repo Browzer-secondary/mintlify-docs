@@ -1,0 +1,132 @@
+---
+title: "Create an API Key to Authenticate Browzer MCP"
+sidebarTitle: "Create API Key"
+description: "Generate a Browzer API key to authenticate your MCP integration. Copy the key, add it to your MCP client config, and start querying your workflow docs."
+---
+
+To connect an MCP client to Browzer, you need an API key. The key authenticates every request your agent makes to Browzer's MCP server endpoint, ensuring that only the clients you authorize can read your workflow documentation. You generate the key once inside Browzer's settings, copy it into your client configuration, and you're ready to query your Knowledge Graph.
+
+## Prerequisites
+
+Before you begin, confirm that you have:
+
+- An active Browzer account with access to your workspace settings
+- At least one workflow published in your [Knowledge Graph](/workflows/knowledge-graph)
+- An MCP client ready to configure (such as Claude Desktop, Cursor, or a custom agent)
+
+## Generate Your API Key
+
+<Steps>
+  <Step title="Log in to Browzer">
+    Open [trybrowzer.com](https://trybrowzer.com) and sign in to your account.
+  </Step>
+  <Step title="Open Settings">
+    In the left sidebar, click **Settings**. This takes you to your workspace configuration.
+  </Step>
+  <Step title="Navigate to API Keys">
+    Inside Settings, locate the **MCP** or **API Keys** section. This is where all integration credentials for your workspace are managed.
+  </Step>
+  <Step title="Create a new key">
+    Click **Create API Key** (sometimes labeled **Generate New Key**). A dialog will appear prompting you to name the key.
+  </Step>
+  <Step title="Name the key">
+    Enter a descriptive name that identifies where or how this key will be used — for example, `Claude Desktop` or `Onboarding Agent`. A clear name makes it easier to rotate or revoke specific keys later.
+  </Step>
+  <Step title="Confirm and generate">
+    Click **Create** (or **Generate**). Browzer will generate a new API key and display it on screen.
+  </Step>
+  <Step title="Copy the key immediately">
+    Copy the key now and store it somewhere secure, such as a password manager or secrets vault. The full key value is only shown once — after you close this dialog, Browzer will only display a masked version.
+  </Step>
+  <Step title="Add the key to your MCP client">
+    Paste the key into your MCP client's configuration as shown in the examples below. Your client is now authorized to query your Browzer workflow documentation.
+  </Step>
+</Steps>
+
+<Warning>
+  Browzer shows your full API key only once, at the moment of creation. If you close the dialog without copying it, you will need to delete the key and generate a new one. There is no way to retrieve the original value afterwards.
+</Warning>
+
+## Configure Your MCP Client
+
+Add your Browzer API key to your MCP client's server configuration. The examples below show the standard format for two common clients — replace `YOUR_API_KEY_HERE` with the key you just copied.
+
+<CodeGroup>
+  ```json Claude Desktop
+  {
+    "mcpServers": {
+      "browzer": {
+        "url": "https://api.trybrowzer.com/mcp",
+        "headers": {
+          "Authorization": "Bearer YOUR_API_KEY_HERE"
+        }
+      }
+    }
+  }
+  ```
+
+  ```json Generic MCP Client
+  {
+    "server": {
+      "name": "browzer",
+      "endpoint": "https://api.trybrowzer.com/mcp",
+      "auth": {
+        "type": "bearer",
+        "token": "YOUR_API_KEY_HERE"
+      }
+    }
+  }
+  ```
+</CodeGroup>
+
+<Tip>
+  For Claude Desktop, the configuration file is typically located at `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS or `%APPDATA%\Claude\claude_desktop_config.json` on Windows. Restart Claude Desktop after saving changes for them to take effect.
+</Tip>
+
+## Security Best Practices
+
+Keeping your API key secure protects your workflow documentation from unauthorized access.
+
+- **Never commit your key to version control.** Use environment variables or a secrets manager to inject the key into your client configuration rather than hardcoding it in a file that ends up in a repository.
+- **Use one key per client.** Creating a separate key for each MCP client makes it easy to revoke access for a specific integration without disrupting others.
+- **Rotate keys that may be compromised.** If you suspect a key has been exposed, delete it in Browzer Settings and generate a replacement immediately. Update your client configuration with the new key.
+- **Limit who can view your Settings.** API key generation is available to workspace administrators. Review your team's permission levels in [Team Members](/account/team-members) if you need to restrict access.
+
+## Verifying Your Connection
+
+After adding the key to your client configuration, send a test query — for example, ask your AI agent to list or summarize a workflow you know exists in your Knowledge Graph. A successful response confirms the key is valid and the connection is working.
+
+If you receive an error, check the troubleshooting section below.
+
+## Troubleshooting
+
+<Accordion title="I can't find the Settings section in the sidebar">
+  Settings is visible to workspace administrators and members with the appropriate role. If you don't see it, ask your workspace admin to check your permissions in [Team Members](/account/team-members) or to generate the key on your behalf.
+</Accordion>
+
+<Accordion title="There is no Create API Key button in Settings">
+  Your account role may not include permission to manage API keys. Contact your workspace administrator. Alternatively, confirm you are looking in the **MCP** or **API Keys** sub-section within Settings, not the top-level Settings landing page.
+</Accordion>
+
+<Accordion title="The key isn't copying to my clipboard">
+  Try clicking the copy icon next to the key rather than manually selecting the text. If your browser blocks clipboard access, select the key text, right-click, and choose **Copy**. You can also type the key manually into a secure note and paste from there.
+</Accordion>
+
+<Accordion title="My MCP client returns a 401 Unauthorized error">
+  A 401 error means the API key was not accepted. Check the following:
+
+  - Confirm the `Authorization` header value is formatted as `Bearer YOUR_KEY` with a space between `Bearer` and the key value.
+  - Make sure there are no leading or trailing spaces around the key in your configuration file.
+  - Verify the key has not been deleted from Browzer Settings. If it no longer appears there, generate a new one and update your client.
+  - Ensure you saved and reloaded your client configuration after adding the key.
+</Accordion>
+
+<Accordion title="The key appears invalid even though I just created it">
+  API keys are active immediately after creation — there is no propagation delay. Double-check that you copied the complete key including any trailing characters. Keys are case-sensitive. If the problem persists, delete the key in Settings, generate a fresh one, and copy it again carefully before pasting.
+</Accordion>
+
+## Related Pages
+
+- [MCP Overview](/mcp/overview) — Learn what the Model Context Protocol is and what you can build with Browzer's MCP server.
+- [Knowledge Graph](/workflows/knowledge-graph) — Understand how your workflow documentation is organized and surfaced to MCP clients.
+- [Team Members](/account/team-members) — Manage who in your workspace can access Settings and generate API keys.

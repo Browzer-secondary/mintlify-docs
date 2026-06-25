@@ -1,0 +1,107 @@
+---
+title: "Get Started with Browzer: Record, Generate, and Publish"
+sidebarTitle: "Quickstart"
+description: "Learn how to record your first browser workflow, auto-generate step-by-step documentation, and publish it to a live Browzer help portal in under 10 minutes."
+---
+
+This guide walks you through everything from signing up to sharing your first published workflow doc. By the end, you'll have a live help portal with real, screenshot-rich documentation — generated automatically from a single browser recording.
+
+<Steps>
+  <Step title="Sign up for Browzer">
+    Go to [trybrowzer.com](https://trybrowzer.com) and click **Start Free**. Enter your email and create a password to open your account. No credit card is required — every new account includes a 14-day free trial.
+
+    <Tip>
+      You can also book a personalized 30-minute demo with the Browzer team at [trybrowzer.com/contact](https://trybrowzer.com/contact) if you'd like a guided walkthrough before diving in.
+    </Tip>
+  </Step>
+
+  <Step title="Install the Browzer Chrome Extension">
+    Browzer captures browser workflows through its Chrome extension. After signing in, navigate to the **Extension** tab in your dashboard and click **Download Extension** to install it from the Chrome Web Store. Once installed, pin the Browzer icon to your Chrome toolbar for quick access.
+
+    <Note>
+      Browzer requires Google Chrome. The extension only activates on standard `http://` and `https://` pages — it won't appear on browser-internal pages like `chrome://settings`.
+    </Note>
+  </Step>
+
+  <Step title="Record your first workflow">
+    Navigate to any web page you want to document — an internal tool, a SaaS app, a customer-facing portal, or anything else you do in the browser. Click the **Browzer icon** in your toolbar, then click **Start Recording**. Perform your process as you normally would: navigate pages, click buttons, fill out forms. When you're finished, click **Stop Recording** and give the recording a name and optional description.
+
+    <Tip>
+      Browzer captures clicks, form inputs, navigation events, keyboard shortcuts, tab switches, and file uploads. For best results, perform each step deliberately — avoid rushing through the workflow.
+    </Tip>
+
+    <Note>
+      Documentation generation typically takes 10–30 seconds after you stop recording. For longer workflows (20+ steps), allow up to a minute.
+    </Note>
+  </Step>
+
+  <Step title="Review and edit the auto-generated documentation">
+    Open your recording from the **Workflows** page in the dashboard. Browzer has already generated a numbered, step-by-step SOP with screenshots, action-type badges (Click, Type, Navigate, and so on), plain-English descriptions, and AI-generated tips for complex steps.
+
+    Review each step and make any edits you need — update a description, add a custom note, or clarify a tip. Changes save automatically and are visible to everyone with access to the workflow.
+
+    <Tip>
+      Switch to **Inspector mode** if you need to see the underlying technical details — CSS selectors, element attributes, and raw event data — for any recorded action.
+    </Tip>
+
+    <Warning>
+      If a step description looks off, check that the target page didn't change between recording and generation. Re-record just that step if needed, or edit the description manually.
+    </Warning>
+  </Step>
+
+  <Step title="Create a Docs Portal">
+    In the dashboard sidebar, click **Docs Portal**, then click **New Portal**. Fill in the required fields:
+
+    - **Title** — the name of your help portal (e.g., "Product Guides" or "User Handbook")
+    - **URL slug** — a lowercase, hyphen-separated identifier (e.g., `product-guides`). This becomes part of your portal's public URL.
+    - **Description** — a short summary that tells visitors what the portal covers
+    - **Primary color** — your brand's hex color code (e.g., `#FF6B35`) to match the portal to your visual identity
+
+    Click **Save** to create the portal.
+
+    <Note>
+      Your URL slug must be unique and contain only lowercase letters, numbers, and hyphens — no spaces or special characters.
+    </Note>
+
+    <Tip>
+      Bookmark the Docs Portal page in your dashboard if you plan to manage multiple portals or publish new docs frequently.
+    </Tip>
+  </Step>
+
+  <Step title="Publish your first doc">
+    From your Docs Portal dashboard, select the workflow page you want to publish. Click **Publish** to make it live. The article will appear immediately in your portal, complete with its screenshots, numbered steps, and any edits you made.
+
+    <Tip>
+      You can publish articles individually — no need to publish in batches. Use the single-article publish option to get critical docs live quickly without waiting for a full review cycle.
+    </Tip>
+
+    <Warning>
+      Published articles are publicly accessible at your portal URL. Before publishing, make sure any sensitive information (passwords, personal data, internal URLs) has been removed or redacted from the documentation.
+    </Warning>
+  </Step>
+
+  <Step title="Share with your team or customers">
+    On any published article page, click the **Share** button to copy a direct link. Send this link to teammates for internal onboarding, or embed it in customer-facing resources. Recipients can view the full step-by-step documentation without needing a Browzer account.
+
+    <Tip>
+      Team members on Business plans can also query your published portal directly from Slack using Browzer's Slack help center bot — great for answering process questions without leaving the conversation.
+    </Tip>
+  </Step>
+</Steps>
+
+## What's next?
+
+<CardGroup cols={2}>
+  <Card title="Knowledge Graph" icon="diagram-project" href="/workflows/knowledge-graph">
+    Add your workflows to a knowledge graph to make them discoverable and queryable by AI tools across your organization.
+  </Card>
+  <Card title="MCP Integration" icon="robot" href="/mcp/overview">
+    Generate a Browzer API key and connect your help portal to AI agents and LLM clients via the Model Context Protocol.
+  </Card>
+  <Card title="Custom Domain" icon="link" href="/docs-portal/custom-domain">
+    Point your own domain to your Browzer help portal for a fully branded customer experience.
+  </Card>
+  <Card title="Team Members" icon="users" href="/account/team-members">
+    Invite colleagues, assign Admin, Member, or Viewer roles, and collaborate on workflow documentation.
+  </Card>
+</CardGroup>

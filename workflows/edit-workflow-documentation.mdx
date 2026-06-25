@@ -1,0 +1,113 @@
+---
+title: "Edit and Update Your Browzer Workflow Documentation"
+sidebarTitle: "Edit Docs"
+description: "Refine auto-generated workflow SOPs in Browzer. Update step descriptions, add tips and warnings, and keep your documentation accurate as your processes evolve."
+---
+
+When Browzer records a browser session, it auto-generates a structured SOP — a numbered sequence of steps, each paired with a screenshot and an annotation captured at the moment the action occurred. Over time you may need to refine the generated text, add context that the recording couldn't capture, or refresh a workflow after a UI change. The editor lets you do all of this without re-recording, so your documentation stays accurate and useful for your entire team.
+
+## What you can edit
+
+Every recorded workflow exposes three layers of editable content:
+
+<CardGroup cols={2}>
+  <Card title="Step descriptions" icon="text">
+    Rewrite or expand the auto-generated text for any step. Add business context, clarify intent, or correct phrasing that doesn't match your terminology.
+  </Card>
+  <Card title="Annotations" icon="tag">
+    Attach inline tips, warnings, and notes to individual steps. Annotations surface important caveats directly alongside the screenshot where they're needed.
+  </Card>
+  <Card title="Step order" icon="list-ordered">
+    Drag steps into a different sequence to match how the process actually works, or to reflect a UI flow that changed since the recording.
+  </Card>
+  <Card title="Step visibility" icon="eye-off">
+    Hide steps that are no longer relevant without deleting them, keeping the workflow history intact while presenting a clean view to readers.
+  </Card>
+</CardGroup>
+
+## Prerequisites
+
+Before you begin, make sure you have:
+
+- An active Browzer account
+- At least one recorded workflow visible in your dashboard
+- Editor or Admin access on your workspace (viewers cannot save changes — ask your workspace admin if you're unsure of your role)
+
+<Note>
+  Step screenshots are captured at record time and are not editable through the workflow editor. If a screenshot is outdated, re-record the affected portion of the workflow to refresh the visuals.
+</Note>
+
+## Edit a workflow
+
+<Steps>
+  <Step title="Open the Workflow Documentation section">
+    Log in to Browzer and click **Workflow Documentation** in the left sidebar. You'll see a list of all recorded workflows, sorted by most recently updated.
+  </Step>
+  <Step title="Select the workflow you want to edit">
+    Click the workflow title to open its detail page. The page displays every step in sequence, each with its screenshot and the auto-generated description beneath it.
+  </Step>
+  <Step title="Enter edit mode">
+    Click the **Edit** button in the top-right corner of the workflow page. The layout shifts: step descriptions become editable text fields, and the annotation toolbar appears alongside each step.
+  </Step>
+  <Step title="Update step descriptions">
+    Click directly on any step's description text to place your cursor there. Edit the text as needed, then click outside the field or press **Tab** to advance to the next step. Changes are staged automatically as you type — nothing is published until you save.
+  </Step>
+  <Step title="Add tips, warnings, or notes">
+    Below each step description, click **+ Add annotation** and choose the annotation type:
+
+    - **Tip** — highlight a shortcut, best practice, or time-saving alternative
+    - **Warning** — flag a consequence or error the reader should avoid
+    - **Note** — provide additional context without implying urgency
+
+    Type your annotation text in the field that appears. You can add multiple annotations to a single step.
+  </Step>
+  <Step title="Reorder steps (optional)">
+    To move a step, hover over its drag handle (the six-dot icon on the left edge of the step card) and drag it to the new position. The step numbers update automatically as you reorder.
+  </Step>
+  <Step title="Save your changes">
+    Click **Save** in the top-right corner to commit all staged edits. Browzer saves a new version of the workflow — your changes are visible to anyone with access to the workflow immediately after saving.
+
+    <Tip>
+      Browzer keeps a version history for every workflow. If you need to roll back an accidental edit, open the **Version history** panel from the workflow's overflow menu (**⋯**) and restore any previous version.
+    </Tip>
+  </Step>
+</Steps>
+
+## After saving
+
+Once you save, readers who open the workflow see your updated descriptions and annotations straight away. If the workflow is published to a [Docs Portal](/docs-portal/create-docs-portal), the portal reflects the changes on the next page load — no re-publishing step is required.
+
+<Info>
+  If your workflow is indexed in the [Knowledge Graph](/workflows/knowledge-graph), edited content is automatically picked up the next time the graph refreshes. You don't need to re-add the workflow after an edit.
+</Info>
+
+## Troubleshooting
+
+<Accordion title="The Edit button is missing or grayed out">
+  The **Edit** button only appears for users with Editor or Admin roles. If you see the workflow but no Edit button, your account has Viewer access. Contact your workspace admin to request an elevated role under [Team Members](/account/team-members).
+</Accordion>
+
+<Accordion title="My changes aren't saving — I see an error or the save button spins indefinitely">
+  This usually means a session timeout or a network interruption. Try the following:
+
+  1. Copy any unsaved text from the description fields.
+  2. Refresh the page — Browzer will prompt you to confirm; click **Discard** if you've already copied your work.
+  3. Re-open the workflow, enter edit mode, and paste your changes back.
+  4. Click **Save** again.
+
+  If the problem persists, check that your browser has a stable internet connection and that no browser extensions are blocking network requests to Browzer.
+</Accordion>
+
+<Accordion title="How do I reorder steps?">
+  In edit mode, hover over a step card until the six-dot drag handle appears on its left edge. Click and hold the handle, then drag the card to the position you want. Release to drop it. Step numbers update automatically. Click **Save** when you're done reordering to preserve the new order.
+</Accordion>
+
+<Accordion title="The workflow page isn't loading">
+  If the workflow detail page shows a blank screen or a loading spinner that never resolves:
+
+  1. Hard-refresh the page (**Ctrl + Shift + R** on Windows/Linux, **Cmd + Shift + R** on Mac).
+  2. Clear your browser cache and try again.
+  3. Try opening the workflow in a different browser or an incognito window to rule out a cache or extension conflict.
+
+  If the issue affects all workflows rather than a single one, check the Browzer status page or contact support.
+</Accordion>

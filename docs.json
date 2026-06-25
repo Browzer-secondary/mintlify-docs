@@ -1,14 +1,14 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "name": "Browzer",
+  "description": "Step-by-step help guides for Browzer — create, publish, and share workflow documentation with your team.",
   "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
+    "primary": "#0784cd",
+    "light": "#046478",
+    "dark": "#040505"
   },
-  "favicon": "/favicon.ico",
+  "favicon": "https://media.brand.dev/287368a8-06f0-4d3a-8207-e119876727a1.png",
   "icons": {
     "library": "lucide"
   },
@@ -27,71 +27,73 @@
           "href": "/"
         },
         {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
-          "anchor": "Help",
-          "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
+          "anchor": "Browzer App",
+          "icon": "arrow-up-right",
+          "href": "https://trybrowzer.com"
         }
       ]
     },
     "directory": "card",
     "groups": [
       {
-        "group": "Platform",
-        "icon": "layers",
+        "group": "Get Started",
+        "icon": "rocket",
         "expanded": true,
         "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+          "introduction",
+          "quickstart"
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
+        "group": "Docs Portal",
+        "icon": "book-open",
         "expanded": true,
         "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
+          "docs-portal/create-docs-portal",
+          "docs-portal/add-docs-to-help-center",
+          "docs-portal/share-documentation",
+          "docs-portal/custom-domain"
         ]
       },
       {
-        "group": "Integrations",
-        "icon": "plug",
+        "group": "Workflow Documentation",
+        "icon": "file-text",
         "expanded": true,
         "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+          "workflows/edit-workflow-documentation",
+          "workflows/knowledge-graph"
+        ]
+      },
+      {
+        "group": "MCP Integration",
+        "icon": "cpu",
+        "expanded": true,
+        "pages": [
+          "mcp/overview",
+          "mcp/create-api-key"
+        ]
+      },
+      {
+        "group": "Account & Team",
+        "icon": "users",
+        "expanded": true,
+        "pages": [
+          "account/team-members",
+          "account/account-settings",
+          "account/billing"
         ]
       }
     ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open Browzer",
+      "href": "https://trybrowzer.com"
     }
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
-    }
+    "socials": {}
   }
 }

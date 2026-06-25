@@ -1,0 +1,99 @@
+---
+title: "Create a Browzer Docs Portal for Your Help Center"
+sidebarTitle: "Create Portal"
+description: "Set up your public-facing Browzer Docs Portal from your account dashboard. Choose a title, URL slug, and optional search indexing to go live."
+---
+
+A Browzer Docs Portal is a branded, publicly accessible help center hosted by Browzer. It gives your team or customers a centralized, searchable hub for all workflow documentation generated from your recorded browser sessions — no third-party platform required. Once created, your portal lives at a unique URL you control and can be customized with a title, description, and primary brand color.
+
+## Prerequisites
+
+- An active Browzer account with portal creation permissions
+- A chosen portal title (e.g., "Customer Help Center" or "Internal Guides")
+- A desired URL slug — lowercase, hyphen-separated, no spaces (e.g., `customer-help` or `api-docs`)
+- Optionally: a brief description and a primary brand color in hex format (e.g., `#FF6B35`)
+
+## Create your Docs Portal
+
+<Steps>
+  <Step title="Open the Docs Center">
+    In your Browzer dashboard, click **Docs Portal** (or **Docs Center**) in the main navigation. This takes you to the portal management hub where you can create and configure all your documentation portals.
+
+    <Tip>
+      Bookmark the Docs Center page for quick access if you manage multiple portals.
+    </Tip>
+  </Step>
+
+  <Step title="Start a new portal">
+    Click the **New Portal** button — typically positioned in the top-right area of the Docs Center page. A creation form opens where you define the portal's identity and settings.
+  </Step>
+
+  <Step title="Enter a portal title">
+    Click the **Portal Title** field and type the display name for your portal. This appears as the portal's main heading and in navigation lists throughout Browzer.
+
+    <Tip>
+      Keep the title concise and descriptive so visitors immediately understand what documentation they are browsing — for example, "Product API Docs" or "User Guide."
+    </Tip>
+  </Step>
+
+  <Step title="Set a URL slug">
+    Click the **URL Slug** field and type your chosen slug (e.g., `customer-help`). Use only lowercase letters, numbers, and hyphens — avoid spaces, underscores, and special characters. Browzer combines this slug with your portal domain to form the public URL.
+
+    <Warning>
+      URL slugs are permanent and cannot be edited after the portal is created. Double-check your slug before proceeding.
+    </Warning>
+  </Step>
+
+  <Step title="Choose an indexing mode">
+    After the portal is created you will see an indexing toggle. Select the mode that matches your use case:
+
+    <CardGroup cols={2}>
+      <Card title="Indexing enabled" icon="magnifying-glass">
+        Browzer submits your portal content to Exa search, making docs publicly discoverable. Ideal for external-facing help centers you want users to find organically.
+      </Card>
+      <Card title="Indexing disabled" icon="eye-slash">
+        Keeps your portal unlisted — content will not appear in search results. Best for internal knowledge bases, staging environments, or docs still under development.
+      </Card>
+    </CardGroup>
+
+    Click the **Disabled** toggle to enable indexing, or leave it off to keep the portal private.
+  </Step>
+
+  <Step title="Add optional details">
+    Fill in the optional **Description** and **Primary Color** fields to brand your portal. The description helps visitors understand the portal's purpose; the primary color is applied to headings and interactive elements.
+  </Step>
+
+  <Step title="Save your portal">
+    Click **Save Changes** (or **Create Portal**). Browzer provisions your portal immediately. Wait for a confirmation message before navigating away.
+  </Step>
+</Steps>
+
+## Confirm it worked
+
+After saving, verify the portal is live:
+
+1. Look for the **Live Portal URL** displayed in the portal settings — it should reflect the slug you chose.
+2. Click **Open** (or paste the URL into a new tab) and confirm the portal loads in your browser.
+3. If you enabled indexing, the toggle should show an **Enabled** state when you reload the settings page.
+
+<Note>
+  Your portal is ready to display content, but pages will only appear once you publish workflow documentation to it. See [Add and Publish Docs to Your Browzer Help Center](/docs-portal/add-docs-to-help-center) for the next step.
+</Note>
+
+## Common issues
+
+<Accordion title="The 'New Portal' or 'Create Portal' button is grayed out or not clickable">
+  Your account may not have portal creation permissions. Contact your workspace admin to request editor or admin-level access. If you already have the correct role, try a hard-refresh (Cmd+Shift+R / Ctrl+Shift+R) or sign out and back in.
+</Accordion>
+
+<Accordion title="I received an error saying the slug is already taken">
+  Slugs are unique across all Browzer portals. Choose a more specific identifier — for example, prefix it with your company name (`acme-help` instead of `help`) — and try again.
+</Accordion>
+
+<Accordion title="The portal was created but is not loading in the browser">
+  Allow up to a minute for the portal to fully provision. If it still does not load, clear your browser cache, try an incognito window, or check your internet connection. If the issue persists, contact Browzer support.
+</Accordion>
+
+<Accordion title="The indexing setting does not save or reverts after I reload">
+  Make sure you click **Save Changes** after toggling indexing. If the toggle resets on reload, try disabling any browser extensions that might interfere with form submissions, then repeat the process.
+</Accordion>
